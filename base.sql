@@ -38,7 +38,7 @@ alter table sexe add primary key(idSexe);
 
 create table nationalite(
     idNationalite int, 
-    nation varchar(30);
+    nation varchar(30)
 );
 alter table nationalite add primary key(idNationalite);
 
