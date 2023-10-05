@@ -48,7 +48,7 @@ create table besoin(
     idDiplome int,
     anneeExperience int,
     idSitMatrimoniale int,
-    idSexe tinyint,
+    idSexe int,
     idNationalite int
 );
 alter table besoin add primary key(idBesoin);
