@@ -16,7 +16,7 @@ create table serviceDemand(
     heureDemand int, 
     hommeJour int
 );
-alter table serviceDemand add foreign key(idService);
+alter table serviceDemand add foreign key(idService) references services(idService);
 
 create table diplome(
     idDiplome int,
