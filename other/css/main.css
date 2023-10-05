@@ -1,0 +1,12 @@
+body{
+}
+
+.navig{
+    height: 100vh;
+    background-color: rgb(13, 0, 80);
+}
+
+.contenu{
+    height: 100vh;
+    background-color: whitesmoke;
+} 
