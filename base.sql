@@ -7,7 +7,7 @@ create table services(
     nomService varchar(30),
     heureTravail int,
     hommeJour int
-):
+);
 alter table services add primary key(idService);
 
 create table serviceDemand(
