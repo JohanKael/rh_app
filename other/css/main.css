@@ -9,4 +9,5 @@ body{
 .contenu{
     height: 100vh;
     background-color: whitesmoke;
+    padding: 1;
 } 
