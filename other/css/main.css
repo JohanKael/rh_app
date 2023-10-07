@@ -3,11 +3,22 @@ body{
 }
 
 .navig{
-    background-color: rgb(8, 0, 50);
+    height: 110vh;
+    background: linear-gradient(to bottom, rgb(22, 7, 80), rgb(81, 0, 174));
+}
+.navig a{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 18px;
+}
+.navig a:hover{
+    font-size: 20px;
+    border-bottom: solid 0.1px #FFF;
 }
 
 .contenu{
     display: flex;
-    background-color: whitesmoke;
-    padding: 1;
+    background-image: url('../img/images.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
 } 

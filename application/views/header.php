@@ -11,7 +11,12 @@
 <body>
 
     <div class="col-md-3 navig">
-        
+        <a href="<?php echo site_url() ?>index.php/welcome">
+            <h1 style="font-size: 60px;">RH APP</h1>
+        </a>
+        <br>
+        <a href="<?php echo site_url() ?>index.php/welcome">Insertion Service</a><br><br>
+        <a href="<?php echo site_url() ?>index.php/finsemaine">Fin de semaine</a>
     </div>
 
     <div class="col-md-9 contenu">
