@@ -33,7 +33,7 @@ class Finsemaine extends CI_Controller {
                 }
                 $recruit = round($recruit);
 
-                
+                $this->finsemaine_model->recruit($service, $recruit);
 
                 redirect('index.php/welcome');
         }
