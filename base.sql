@@ -18,7 +18,7 @@ alter table serviceDemand add foreign key(idService) references services(idServi
 
 create table diplome(
     idDiplome int primary key AUTO_INCREMENT,
-    descriDiplome char(1)
+    descriDiplome varchar(20)
 );
 
 create table sitMatrimoniale(
@@ -28,7 +28,7 @@ create table sitMatrimoniale(
 
 create table sexe(
     idSexe int primary key AUTO_INCREMENT,
-    descriSexe char(1)
+    descriSexe varchar(20)
 );
 
 create table nationalite(

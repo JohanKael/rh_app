@@ -8,8 +8,10 @@ class Recruit_model extends CI_Model{
         $this->load->database();
     }
 
-    public function getChose(){
-        
+    public function getServiceDemand(){
+        $this->db->select('*');
+        $this->db->from('serviceDemand');
+        $this->db->join('services');
     }
 
 }
