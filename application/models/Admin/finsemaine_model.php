@@ -36,7 +36,7 @@ class Finsemaine_model extends CI_Model{
     }
 
     public function recruit($idService, $recrut){
-        $sql = "INSERT INTO serviceDemand(idService, recrut) VALUES('%s', '%s')";
+        $sql = "INSERT INTO serviceDemand(idService, recrut) VALUES(%s, %s)";
         $sql = sprintf($sql, $this->db->escape($idService), $this->db->escape($recrut));
         $this->db->query($sql);
     }
