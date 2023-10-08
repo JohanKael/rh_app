@@ -9,9 +9,11 @@ class Recruit_model extends CI_Model{
     }
 
     public function getServiceDemand(){
-        $this->db->select('*');
-        $this->db->from('serviceDemand');
-        $this->db->join('services');
+        $this->db->select('serv.idDemand, serv.idService, recrut, besoin.idDiplome, besoin.anneeExperience, besoin.idSitMatrimoniale, besoin.idSexe, besoin.idNationalite');
+        $this->db->from('serviceDemand serv');
+        $this->db->join('besoin', 'serv.idService = besoin.idService', 'inner');
+        $query = $this->db->get();
+        return $query->result();
     }
 
 }
