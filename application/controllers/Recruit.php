@@ -11,10 +11,16 @@ class Recruit extends CI_Controller{
     public function index(){
         $this->load->view('header');
 
-
-
+        $data['info'] = $this->recruit_model->getServiceDemand();
+        $this->load->view('recruit_view', $data);
 
         $this->load->view('footer');
+    }
+
+    public function delete($idDemand){
+        $this->recruit_model->deleteById($idDemand);
+
+        redirect('index.php/recruit');
     }
 
 }
