@@ -51,5 +51,3 @@ alter table besoin add foreign key(idSitMatrimoniale) references sitMatrimoniale
 alter table besoin add foreign key(idSexe) references sexe(idSexe);
 alter table besoin add foreign key(idNationalite) references nationalite(idNationalite);
 
-
-
