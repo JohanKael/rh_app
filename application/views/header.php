@@ -15,8 +15,8 @@
             <h1 style="font-size: 60px;">RH APP</h1>
         </a>
         <br>
-        <a href="<?php echo site_url() ?>index.php/ClientMain/index">Annonce</a><br><br>
-        <a href="<?php echo site_url() ?>index.php/Entretient/index">Entretient</a>
+        <a href="<?php echo site_url() ?>index.php/ClientMain">Annonce</a><br><br>
+        <a href="<?php echo site_url() ?>index.php/Entretient">Entretient</a>
     </div>
 
     <div class="col-md-9 contenu">
