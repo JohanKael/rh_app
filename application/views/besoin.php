@@ -4,7 +4,7 @@
 				<div class="card">
 					<div class="card-body">
 						<h2 class="card-title">Insertion des besoins de l'entreprise</h2>
-						<form class="forms-sample" action="<?php echo site_url("besoinController/insert"); ?>" method="post">
+						<form class="forms-sample" action="<?php echo site_url("index.php/BesoinController/index"); ?>" method="post">
 							<div class="card-body">
 								<h3>Service suppose :</h3>
 								<div class="form-group">
@@ -14,6 +14,10 @@
 								<div class="form-group">
 									<label for="horaire">Heure voulu :</label>
 									<input type="number" class="form-control" placeholder="Heure voulu" aria-describedby="basic-addon1" name="heureVoulu" id="">
+								</div>
+								<div class="form-group">
+									<label for="horaire">Employer demander :</label>
+									<input type="number" class="form-control" placeholder="Hommejour" aria-describedby="basic-addon1" name="HommeJour" id="">
 								</div>
 							</div>
 							<div class="card-body">

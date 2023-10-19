@@ -60,7 +60,20 @@
             }
             return $array;
         }
-        
+               
+        public function get_idService(){
+            $this->db->select('idService');
+            $this->db->from('services');
+            $query = $this->db->get();
+            $array = array();
+            foreach($query->result_array() as $res){
+                $ar = array(
+                    "idService" => $res['idService']
+                );
+                array_push($array,$ar);
+            }
+            return $array;
+        } 
         
     }
 ?>

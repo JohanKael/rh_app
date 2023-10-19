@@ -8,7 +8,7 @@ class crudModel extends CI_Model {
         // Insérer les données dans la table
         $this->db->insert($Table, $data);
         $inserted = $this->db->affected_rows() > 0;
-        
+        echo $inserted;
         // Vérifier si l'insertion a réussi
         if ($inserted) {
             echo 'Les données ont été insérées avec succès.';
