@@ -18,7 +18,7 @@ alter table serviceDemand add foreign key(idService) references services(idServi
 
 create table diplome(
     idDiplome int primary key AUTO_INCREMENT,
-    descriDiplome char(1)
+    descriDiplome varchar(100)
 );
 
 create table sitMatrimoniale(
@@ -28,7 +28,7 @@ create table sitMatrimoniale(
 
 create table sexe(
     idSexe int primary key AUTO_INCREMENT,
-    descriSexe char(1)
+    descriSexe varchar(100)
 );
 
 create table nationalite(
@@ -51,5 +51,22 @@ alter table besoin add foreign key(idSitMatrimoniale) references sitMatrimoniale
 alter table besoin add foreign key(idSexe) references sexe(idSexe);
 alter table besoin add foreign key(idNationalite) references nationalite(idNationalite);
 
+
+INSERT INTO sexe (descriSexe) VALUES ('Homme'), ('Femme');
+
+INSERT INTO nationalite (nation) VALUES 
+('Malagasy'),
+('Français'),
+('Anglais');
+INSERT INTO diplome (descriDiplome) VALUES 
+('Doctorat'),
+('Master'),
+('Licence'),
+('Bacc');
+INSERT INTO sitMatrimoniale (descriSitMatrimoniale) VALUES 
+('Single'),
+('Married'),
+('Divorced'),
+('Widowed');
 
 

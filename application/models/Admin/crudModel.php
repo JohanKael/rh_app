@@ -21,6 +21,7 @@ class crudModel extends CI_Model {
 
     public function delete_data($id,$Table)
     {
+        
 
     $this->db->where('id', $id);
     $this->db->delete($Table);
@@ -33,11 +34,11 @@ class crudModel extends CI_Model {
         }
     }
 
-    public function update_data($id,$data)
+    public function update_data($id,$data,$nom_table)
 {
 
-    $this->db->where('id', $id);
-    $this->db->update('votre_table', $data);
+    $this->db->where($id, $id);
+    $this->db->update($nom_table, $data);
     $updated = $this->db->affected_rows() > 0;
 
     if ($updated) {
@@ -49,5 +50,3 @@ class crudModel extends CI_Model {
 
 
 }
-
-
