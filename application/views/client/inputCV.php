@@ -65,19 +65,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-            <h3> <u> Experience : </u> </h3>
-                <div class="form-group">
-                    <label for="periode" class="col-md-4 control-label">Periode</label>
-                    <div class="col-md-8">
-                        <input type="date" class="form-control" aria-describedby="basic-addon1" name="periode" id="periode">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="detail" class="col-md-4 control-label">Details</label>
-                    <div class="col-md-8">
-                        <textarea class="form-control" aria-describedby="basic-addon1" name="detail" id="detail" cols="50" rows="2"></textarea>
-                    </div>
-                </div>
+                <?php include('ClientExp.php'); ?>
             </div>
         </div><br>
         <input type="submit" value="Soummettre" class="btn btn-primary mr-2">
