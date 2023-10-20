@@ -52,8 +52,9 @@
             <div class="col-md-6">
                 <h3> <u> Experience : </u> </h3>
                 <div class="form-group">
-                    <label for="periode" class="col-md-4 control-label">Periode</label>
+                    <label for="periode" class="col-md-4 control-label">Annee d'experience</label>
                     <div class="col-md-8">
+                        <select name="" id=""></select>
                         <input type="date" class="form-control" aria-describedby="basic-addon1" name="periode" id="periode">
                     </div>
                 </div>
