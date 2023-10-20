@@ -1,5 +1,5 @@
 <?php
-    if (condition) { ?>
+    if ($info == NULL) { ?>
         <div>Vous n'avez pas encore d'experience. </div>
 <?php
     }else {
