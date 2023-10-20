@@ -1,48 +1,85 @@
 
-<div class="col-md-8 grid-margin stretch-card">
+<div class="col-md-12 grid-margin stretch-card">
     <h2 class="card-title">Insertion de votre CV</h2>
     <form action="" method="post">
         <div class="row">
             <div class="col-md-6">
                 <h3> <u> Identite : </u> </h3>
-                <div class="input-group">
-                    <label for="nom">Nom</label>
-                    <input type="text" class="form-control" aria-describedby="basic-addon1" name="nom" id="nom">
+                <div class="form-group">
+                    <label for="nom" class="col-md-4 control-label">Nom</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" aria-describedby="basic-addon1" name="nom" id="nom">
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label for="prenom">Prenom</label>
-                    <input type="text" class="form-control" aria-describedby="basic-addon1" name="prenom" id="prenom">
+                <div class="form-group">
+                    <label for="prenom" class="col-md-4 control-label">Prenom</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" aria-describedby="basic-addon1" name="prenom" id="prenom">
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label for="date_de_naissance">Date de naissance</label>
-                    <input type="date" class="form-control" aria-describedby="basic-addon1" name="date_de_naissance" id="date_de_naissance">
+                <div class="form-group">
+                    <label for="date_de_naissance" class="col-md-5 control-label">Date de naissance</label>
+                    <div class="col-md-7">
+                        <input type="date" class="form-control" aria-describedby="basic-addon1" name="date_de_naissance" id="date_de_naissance">
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label for="adresse">Adresse</label>
-                    <input type="number" class="form-control" aria-describedby="basic-addon1" name="adresse" id="adresse">
+                <div class="form-group">
+                    <label for="adresse" class="col-md-4 control-label">Adresse</label>
+                    <div class="col-md-8">
+                        <input type="number" class="form-control" aria-describedby="basic-addon1" name="adresse" id="adresse">
+                    </div>
                 </div>
             </div>
 
             <div class="col-md-6">
                 <h3> <u> Contact : </u> </h3>
-                <div class="input-group">
-                    <label for="phone">Numero telephone</label>
-                    <input type="number" class="form-control" aria-describedby="basic-addon1" name="phone" id="phone">
+                <div class="form-group">
+                    <label for="phone" class="col-md-4 control-label">Numero telephone</label>
+                    <div class="col-md-8">
+                        <input type="number" class="form-control" aria-describedby="basic-addon1" name="phone" id="phone">
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label for="mail">Email</label>
-                    <input type="email" class="form-control" aria-describedby="basic-addon1" name="mail" id="mail">
+                <div class="form-group">
+                    <label for="mail" class="col-md-4 control-label">Email</label>
+                    <div class="col-md-8">
+                        <input type="email" class="form-control" aria-describedby="basic-addon1" name="mail" id="mail">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <h3> <u> Autres : </u> </h3>
-            <div class="input-group">
-                <label for="exp">Experience</label>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
-                <input type="number" class="form-control" aria-describedby="basic-addon1" name="phone" id="phone">
+        </div><br>
+
+        <br><div class="row">
+            <div class="col-md-6">
+                <h3> <u> Experience : </u> </h3>
+                <div class="form-group">
+                    <label for="periode" class="col-md-4 control-label">Periode</label>
+                    <div class="col-md-8">
+                        <input type="date" class="form-control" aria-describedby="basic-addon1" name="periode" id="periode">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="detail" class="col-md-4 control-label">Details</label>
+                    <div class="col-md-8">
+                        <textarea class="form-control" aria-describedby="basic-addon1" name="detail" id="detail" cols="50" rows="2"></textarea>
+                    </div>
+                </div>
             </div>
-        </div>
+            <div class="col-md-6">
+            <h3> <u> Experience : </u> </h3>
+                <div class="form-group">
+                    <label for="periode" class="col-md-4 control-label">Periode</label>
+                    <div class="col-md-8">
+                        <input type="date" class="form-control" aria-describedby="basic-addon1" name="periode" id="periode">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="detail" class="col-md-4 control-label">Details</label>
+                    <div class="col-md-8">
+                        <textarea class="form-control" aria-describedby="basic-addon1" name="detail" id="detail" cols="50" rows="2"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div><br>
         <input type="submit" value="Soummettre" class="btn btn-primary mr-2">
     </form>
 </div>
