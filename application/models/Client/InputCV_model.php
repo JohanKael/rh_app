@@ -13,6 +13,17 @@ class InputCV_model extends CI_Model{
         return $query->result();
     }
 
+    public function getForeignKey($tableName, $primaryKey, $condition) {
+        $sql = "SELECT * FROM $tableName WHERE $primaryKey = $condition";
+        $result = $this->db->query($sql);
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $nom = $row["$primaryKey"];
+        } else {
+            echo "Aucun résultat trouvé pour cet ID.";
+        }
+    }
+
     public function insertIdentite($nom, $prenom, $birthday, $adresse) {
         $sql = "INSERT INTO identite(nom, prenom, date_naissance, adresse) VALUES(%s,%s,%s,%s)";
         $sql = sprintf($sql,$this->db->escape($nom),$this->db->escape($prenom),$this->db->escape($birthday),$this->db->escape($adresse));
