@@ -13,6 +13,18 @@ class InputCV_model extends CI_Model{
         return $query->result();
     }
 
+    public function insertIdentite($nom, $prenom, $birthday, $adresse) {
+        $sql = "INSERT INTO identite(nom, prenom, date_naissance, adresse) VALUES(%s,%s,%s,%s)";
+        $sql = sprintf($sql,$this->db->escape($nom),$this->db->escape($prenom),$this->db->escape($birthday),$this->db->escape($adresse));
+        $this->db->query($sql);
+    }
+
+    public function insertionCV($idIdentite, $idContact, $idExperience, $idPatrimoniale) {
+        $sql = "INSERT INTO cv(idIdentite, idContact, idExperience, idPatrimoniale) VALUES(%s,%s,%s,%s)";
+        $sql = sprintf($sql, $this->db->escape($idIdentite), $this->db->escape($idContact), $this->db->escape($idExperience), $this->db->escape($idPatrimoniale));
+        $this->db->query($sql);
+    }
+
 }
 
 ?>

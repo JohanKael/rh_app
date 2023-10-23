@@ -27,7 +27,7 @@
             $experience = $this->input->post('experience');
             $patrimoniale = $this->input->post('etat');
 
-            $data = $this->inputCV_model->;
+            $data = $this->inputCV_model->insertionCV($nom,$prenom,$birthday,$adresse,$phone,$email,$experience,$patrimoniale);
         }
         
     }
