@@ -54,9 +54,9 @@
             <div class="col-md-8">
                 <h3> <u> Experience : </u> </h3>
                 <div class="form-group">
-                    <label for="periode" class="col-md-4 control-label">Annee d'experience</label>
+                    <label for="experience" class="col-md-4 control-label">Annee d'experience</label>
                     <div class="col-md-8">
-                        <input type="number" class="form-control" aria-describedby="basic-addon1" name="periode" id="periode">
+                        <input type="number" class="form-control" aria-describedby="basic-addon1" name="experience" id="experience">
                     </div>
                 </div>
             </div>

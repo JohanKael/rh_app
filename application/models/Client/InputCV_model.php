@@ -8,6 +8,11 @@ class InputCV_model extends CI_Model{
         $this->load->database();
     }
 
+    public function getState() {
+        $query = $this->db->get('sitMatrimoniale');
+        return $query->result();
+    }
+
 }
 
 ?>

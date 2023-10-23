@@ -10,7 +10,7 @@
     
         public function index(){
             $this->load->view('header');
-            $this->load->view('client/inputCV');
+            $this->load->view('client/client');
             $this->load->view('footer');
         }	
     
