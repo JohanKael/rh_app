@@ -1,9 +1,9 @@
 
 <div class="col-md-12 grid-margin stretch-card">
     <h2 class="card-title">Insertion de votre CV</h2>
-    <form action="" method="post">
+    <form action="<?php echo site_url() ?>index.php/InputCV/insertCV" method="post">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <h3> <u> Identite : </u> </h3>
                 <div class="form-group">
                     <label for="nom" class="col-md-4 control-label">Nom</label>
@@ -26,12 +26,14 @@
                 <div class="form-group">
                     <label for="adresse" class="col-md-4 control-label">Adresse</label>
                     <div class="col-md-8">
-                        <input type="number" class="form-control" aria-describedby="basic-addon1" name="adresse" id="adresse">
+                        <input type="text" class="form-control" aria-describedby="basic-addon1" name="adresse" id="adresse">
                     </div>
                 </div>
             </div>
+        </div><br>
 
-            <div class="col-md-6">
+        <br><div class="row">
+            <div class="col-md-8">
                 <h3> <u> Contact : </u> </h3>
                 <div class="form-group">
                     <label for="phone" class="col-md-4 control-label">Numero telephone</label>
@@ -49,24 +51,30 @@
         </div><br>
 
         <br><div class="row">
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <h3> <u> Experience : </u> </h3>
                 <div class="form-group">
                     <label for="periode" class="col-md-4 control-label">Annee d'experience</label>
                     <div class="col-md-8">
-                        <select name="" id=""></select>
-                        <input type="date" class="form-control" aria-describedby="basic-addon1" name="periode" id="periode">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="detail" class="col-md-4 control-label">Details</label>
-                    <div class="col-md-8">
-                        <textarea class="form-control" aria-describedby="basic-addon1" name="detail" id="detail" cols="50" rows="2"></textarea>
+                        <input type="number" class="form-control" aria-describedby="basic-addon1" name="periode" id="periode">
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <?php include('ClientExp.php'); ?>
+        </div><br>
+
+        <br><div class="row">
+            <div class="col-md-8">
+                <h3> <u> Situation patrimoniale : </u> </h3>
+                <div class="form-group">
+                    <label for="etat" class="col-md-4 control-label">Etat</label>
+                    <div class="col-md-8">
+                        <select name="etat" id="etat" class="form-control">
+                            <?php foreach ($states as $state) { ?>
+                                <option value="<?php echo $state->idSitMatrimoniale ; ?>"><?php echo $state->descriSitMatrimoniale ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div><br>
         <input type="submit" value="Soummettre" class="btn btn-primary mr-2">
