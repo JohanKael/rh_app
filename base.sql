@@ -54,16 +54,9 @@ alter table besoin add foreign key(idNationalite) references nationalite(idNatio
 -- -----------------------------------------------------------------
 -- -----------------------------------------------------------------
 -- DEBUT partie client --
-CREATE TABLE identite(
-    idIdentite int PRIMARY KEY AUTO_INCREMENT,
-    nom VARCHAR(100),
-    prenom VARCHAR(100),
-    date_naissance DATE,
-    adresse VARCHAR(30)
-);
-
 CREATE TABLE contact(
     idContact int PRIMARY KEY AUTO_INCREMENT,
+    idIdentite int,
     telephone INT,
     email VARCHAR(150)
 );
@@ -73,17 +66,25 @@ CREATE Table experience(
     annee int
 );
 
-CREATE Table cv(
-    idCV int PRIMARY KEY auto_increment,
-    idIdentite int,
+CREATE TABLE identite(
+    idIdentite int PRIMARY KEY AUTO_INCREMENT,
     idContact int,
     idExperience int,
-    idPatrimoniale int
+    idSitMatrimoniale int,
+    nom VARCHAR(100),
+    prenom VARCHAR(100),
+    date_naissance DATE,
+    adresse VARCHAR(30)
+);
+alter table identite add foreign key(idContact) references contact(idContact);
+alter table identite add foreign key(idExperience) references experience(idExperience);
+alter table identite add foreign key(idSitMatrimoniale) references sitMatrimoniale(idSitMatrimoniale);
+
+CREATE Table cv(
+    idCV int PRIMARY KEY auto_increment,
+    idIdentite int
 );
 alter table cv add foreign key(idIdentite) references identite(idIdentite);
-alter table cv add foreign key(idContact) references contact(idContact);
-alter table cv add foreign key(idExperience) references experience(idExperience);
-alter table cv add foreign key(idPatrimoniale) references sitMatrimoniale(idSitMatrimoniale);
 
 -- DEBUT data test --
 INSERT INTO sitMatrimoniale(descriSitMatrimoniale) VALUES

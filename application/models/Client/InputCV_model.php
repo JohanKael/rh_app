@@ -18,7 +18,8 @@ class InputCV_model extends CI_Model{
         $result = $this->db->query($sql);
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
-            $nom = $row["$primaryKey"];
+            $foreignKey = $row["$primaryKey"];
+            return $foreignKey->result();
         } else {
             echo "Aucun résultat trouvé pour cet ID.";
         }
@@ -28,6 +29,10 @@ class InputCV_model extends CI_Model{
         $sql = "INSERT INTO identite(nom, prenom, date_naissance, adresse) VALUES(%s,%s,%s,%s)";
         $sql = sprintf($sql,$this->db->escape($nom),$this->db->escape($prenom),$this->db->escape($birthday),$this->db->escape($adresse));
         $this->db->query($sql);
+    }
+
+    public function insertContact($phone, $email) {
+        $sql = "INSERT INTO contact(telephone, email) VALUES(%s,%s)";
     }
 
     public function insertionCV($idIdentite, $idContact, $idExperience, $idPatrimoniale) {
