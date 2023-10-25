@@ -1,7 +1,7 @@
 
 <div class="col-md-12 grid-margin stretch-card">
     <h2 class="card-title">Insertion de votre CV</h2>
-    <form action="<?php echo site_url() ?>index.php/InputCV/insertCV" method="post">
+    <form action="<?php echo site_url("index.php/InputCV/insertCV"); ?>" method="post">
         <div class="row">
             <div class="col-md-8">
                 <h3> <u> Identite : </u> </h3>
