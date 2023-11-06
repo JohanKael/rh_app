@@ -55,9 +55,27 @@ public function getState() {
     return $query->result();
 }
 
-// public function getId() {
-    
-// }
+public function getId_Element($idAttribut,$table){
+    $this->db->select($idAttribut);
+    $this->db->from($table);
+    $query = $this->db->get();
+    $array = array();
+    foreach($query->result_array() as $res){
+        $ar = array(
+            $idAttribut => $res[$idAttribut]
+        );
+        array_push($array,$ar);
+    }
+    return $array;
+}
+
+public function get_etat($choice){
+    $this->db->select('idSitMatrimoniale');
+    $this->db->from('sitMatrimoniale');
+    $this->db->where('descriSitMatrimoniale', $choice);
+    $query = $this->db->get();
+    return $query->row();
+}
 
 //** ------------------------------------------------------------------------------------------------- */
 /** Fin partie Client */
