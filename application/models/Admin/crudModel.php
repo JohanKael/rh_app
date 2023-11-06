@@ -55,6 +55,10 @@ public function getState() {
     return $query->result();
 }
 
+// public function getId() {
+    
+// }
+
 //** ------------------------------------------------------------------------------------------------- */
 /** Fin partie Client */
 
