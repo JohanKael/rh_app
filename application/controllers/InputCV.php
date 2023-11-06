@@ -18,22 +18,20 @@
         }
 
         public function traitInsertionCV() {
-            $dataCV = array(
-                'nom_service' => $this->input->post('nom_service'),
-                'heureVoulu' => $this->input->post('heureVoulu'),
-                'Hommejour' => $this->input->post('Hommejour')
+            $tableIdentite = 'identite'; $tableContact = 'contact'; $tableExperience = 'experience';
+            $dataIdentite = array(
+                'nom' => $this->input->post('nom'),
+                'prenom' => $this->input->post('prenom'),
+                'date_naissance' => $this->input->post('date_de_naissance'),
+                'adresse' => $this->input->post('adresse')
             );
-    
-            $nom = $this->input->post('nom');
-            $prenom = $this->input->post('prenom');
-            $birthday = $this->input->post('date_de_naissance');
-            $adresse = $this->input->post('adresse');
-            $phone = $this->input->post('phone');
-            $email = $this->input->post('mail');
-            $experience = $this->input->post('experience');
-            $patrimoniale = $this->input->post('etat');
+            // $nom = $this->input->post('nom');
+            // $prenom = $this->input->post('prenom');
+            // $birthday = $this->input->post('date_de_naissance');
+            // $adresse = $this->input->post('adresse');
 
-            $data = $this->inputCV_model->insertionCV($nom,$prenom,$birthday,$adresse,$phone,$email,$experience,$patrimoniale);
+            $data = $this->crudModel->insert_data($dataIdentite,$tableIdentite);
+            $this->load->view('client/inputCV');
         }
         
     }

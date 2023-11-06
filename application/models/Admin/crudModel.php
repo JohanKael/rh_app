@@ -10,11 +10,11 @@ class crudModel extends CI_Model {
         $inserted = $this->db->affected_rows() > 0;
         
         // Vérifier si l'insertion a réussi
-        if ($inserted) {
-            echo 'Les données ont été insérées avec succès.';
-        } else {
-            echo 'Erreur lors de l\'insertion des données.';
-        }
+        // if ($inserted) {
+        //    $this->load->view($newView);
+        // } else {
+        //     echo 'Erreur lors de l\'insertion des données.';
+        // }
         // Vérifier si l'insertion a réussi
         
     }
