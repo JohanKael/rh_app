@@ -56,7 +56,6 @@ alter table besoin add foreign key(idNationalite) references nationalite(idNatio
 -- DEBUT partie client --
 CREATE TABLE contact(
     idContact int PRIMARY KEY AUTO_INCREMENT,
-    idIdentite int,
     telephone INT,
     email VARCHAR(150)
 );
