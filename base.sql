@@ -52,4 +52,18 @@ alter table besoin add foreign key(idSexe) references sexe(idSexe);
 alter table besoin add foreign key(idNationalite) references nationalite(idNationalite);
 
 
+create table question(
+    idQuestion int primary key AUTO_INCREMENT,
+    idService int, 
+    descQuestion varchar(60),
+    coeff int
+);
+alter table question add foreign key(idService) references services(idService);
 
+create table questRep(
+    idQuestRep int primary key AUTO_INCREMENT,
+    idQuestion int,
+    descriReponse varchar(60),
+    checkRep tinyint
+);
+alter table questRep add foreign key(idQuestion) references question(idQuestion);
