@@ -68,22 +68,22 @@ CREATE Table experience(
 
 CREATE TABLE identite(
     idIdentite int PRIMARY KEY AUTO_INCREMENT,
-    idContact int,
-    idExperience int,
-    idSitMatrimoniale int,
     nom VARCHAR(100),
     prenom VARCHAR(100),
     date_naissance DATE,
     adresse VARCHAR(30)
 );
-alter table identite add foreign key(idContact) references contact(idContact);
-alter table identite add foreign key(idExperience) references experience(idExperience);
-alter table identite add foreign key(idSitMatrimoniale) references sitMatrimoniale(idSitMatrimoniale);
 
 CREATE Table cv(
     idCV int PRIMARY KEY auto_increment,
+    idContact int,
+    idExperience int,
+    idSitMatrimoniale int,
     idIdentite int
 );
+alter table cv add foreign key(idContact) references contact(idContact);
+alter table cv add foreign key(idExperience) references experience(idExperience);
+alter table cv add foreign key(idSitMatrimoniale) references sitMatrimoniale(idSitMatrimoniale);
 alter table cv add foreign key(idIdentite) references identite(idIdentite);
 
 -- DEBUT data test --
