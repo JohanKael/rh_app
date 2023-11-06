@@ -17,7 +17,8 @@
         <br>
         <a href="<?php echo site_url() ?>index.php/recruit">Liste recrutement</a><br><br>
         <a href="<?php echo site_url() ?>index.php/welcome">Insertion Service</a><br><br>
-        <a href="<?php echo site_url() ?>index.php/finsemaine">Fin de semaine</a>
+        <a href="<?php echo site_url() ?>index.php/finsemaine">Fin de semaine</a><br><br>
+        <a href="<?php echo site_url() ?>index.php/test">Insertion test QCM</a>
     </div>
 
     <div class="col-md-9 contenu">

@@ -9,7 +9,7 @@ class Recruit_model extends CI_Model{
     }
 
     public function getServiceDemand(){
-        $this->db->select('*');
+        $this->db->select('serv.idDemand, s.nomService, serv.recrut, di.descriDiplome, sit.descriSitMatrimoniale, b.anneeExperience, sexe.descriSexe, nat.nation');
         $this->db->from('serviceDemand serv');
         $this->db->join('besoin b', 'serv.idService = b.idService', 'inner');
         $this->db->join('services s', 'serv.idService = s.idService', 'inner');
@@ -17,6 +17,7 @@ class Recruit_model extends CI_Model{
         $this->db->join('sitMatrimoniale sit', 'b.idSitMatrimoniale = sit.idSitMatrimoniale', 'inner');
         $this->db->join('sexe', 'b.idSexe = sexe.idSexe', 'inner');
         $this->db->join('nationalite nat', 'b.idNationalite = nat.idNationalite', 'inner');
+        $this->db->limit(20);
         $query = $this->db->get();
         return $query->result();
     }
