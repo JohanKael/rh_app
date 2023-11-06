@@ -10,9 +10,9 @@ class BesoinController extends CI_Controller {
     public function index() {
         // Retrieve the form data
         $dataService = array(
-            'nom_service' => $this->input->post('nom_service'),
-            'heureVoulu' => $this->input->post('heureVoulu'),
-            'Hommejour' => $this->input->post('Hommejour')
+            'nomservice' => $this->input->post('nom_service'),
+            'heureTravail' => $this->input->post('heureVoulu'),
+            'hommeJour' => $this->input->post('HommeJour')
         );
         $Tablee = "services";
         $this->crudModel->insert_data($dataService, $Tablee);

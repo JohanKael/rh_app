@@ -52,7 +52,6 @@ alter table besoin add foreign key(idSexe) references sexe(idSexe);
 alter table besoin add foreign key(idNationalite) references nationalite(idNationalite);
 
 
-<<<<<<< HEAD
 INSERT INTO sexe (descriSexe) VALUES ('Homme'), ('Femme');
 
 INSERT INTO nationalite (nation) VALUES 
@@ -70,7 +69,6 @@ INSERT INTO sitMatrimoniale (descriSitMatrimoniale) VALUES
 ('Divorced'),
 ('Widowed');
 
-=======
 create table question(
     idQuestion int primary key AUTO_INCREMENT,
     idService int, 
@@ -78,7 +76,6 @@ create table question(
     coeff int
 );
 alter table question add foreign key(idService) references services(idService);
->>>>>>> test_qcm
 
 create table questRep(
     idQuestRep int primary key AUTO_INCREMENT,
