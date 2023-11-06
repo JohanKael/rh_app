@@ -59,11 +59,15 @@ CREATE TABLE contact(
     telephone INT,
     email VARCHAR(150)
 );
+--  select * from contact
+--  drop table contact
 
 CREATE Table experience(
     idExperience int PRIMARY KEY AUTO_INCREMENT,
     annee int
 );
+--  select * from experience
+--  drop table experience
 
 CREATE TABLE identite(
     idIdentite int PRIMARY KEY AUTO_INCREMENT,
@@ -72,6 +76,8 @@ CREATE TABLE identite(
     date_naissance DATE,
     adresse VARCHAR(30)
 );
+--  select * from identite
+--  drop table identite
 
 CREATE Table cv(
     idCV int PRIMARY KEY auto_increment,
@@ -80,6 +86,9 @@ CREATE Table cv(
     idSitMatrimoniale int,
     idIdentite int
 );
+--  select * from cv
+--  drop table cv
+
 alter table cv add foreign key(idContact) references contact(idContact);
 alter table cv add foreign key(idExperience) references experience(idExperience);
 alter table cv add foreign key(idSitMatrimoniale) references sitMatrimoniale(idSitMatrimoniale);

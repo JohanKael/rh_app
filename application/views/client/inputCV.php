@@ -68,9 +68,9 @@
                 <div class="form-group">
                     <label for="etat" class="col-md-4 control-label">Etat</label>
                     <div class="col-md-8">
-                        <select name="etat" id="etat" class="form-control">
+                        <select id="etat" class="form-control">
                             <?php foreach ($states as $state) { ?>
-                                <option value="<?php echo $state->idSitMatrimoniale ; ?>"><?php echo $state->descriSitMatrimoniale ?></option>
+                                <option name="etat" value="<?php echo $state->idSitMatrimoniale ; ?>"><?php echo $state->descriSitMatrimoniale ?></option>
                             <?php } ?>
                         </select>
                     </div>
