@@ -5,18 +5,10 @@ class crudModel extends CI_Model {
 
     public function insert_data($data,$Table)
     {
-        // Insérer les données dans la table
+
         $this->db->insert($Table, $data);
-        $inserted = $this->db->affected_rows() > 0;
-        echo $inserted;
-        // Vérifier si l'insertion a réussi
-        if ($inserted) {
-            echo 'Les données ont été insérées avec succès.';
-        } else {
-            echo 'Erreur lors de l\'insertion des données.';
-        }
-        // Vérifier si l'insertion a réussi
-        
+        $this->db->affected_rows() > 0;
+
     }
 
     public function delete_data($id,$Table)
@@ -47,6 +39,15 @@ class crudModel extends CI_Model {
         echo 'Erreur lors de la mise à jour des données.';
     }
 }
-
-
+public function get_idService($data){
+        $this->db->select('idService');
+        $this->db->where('nomservice', $data['nomservice']);
+        $this->db->where('heureTravail', $data['heureTravail']);
+        $this->db->where('hommeJour', $data['hommeJour']);
+        $query = $this->db->get('services');
+        $array = array();
+            $row = $query->row();
+            return $row->idService; 
+    }
 }
+?>

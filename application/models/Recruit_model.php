@@ -19,7 +19,22 @@ class Recruit_model extends CI_Model{
         $this->db->join('nationalite nat', 'b.idNationalite = nat.idNationalite', 'inner');
         $this->db->limit(20);
         $query = $this->db->get();
-        return $query->result();
+        $array = array();
+        foreach($query->result_array() as $res){
+            $ar = array(
+                "nomService" => $res['nomService'],
+                "recrut" => $res['recrut'],
+                "descriDiplome" => $res['descriDiplome'],
+                "idDemand" => $res['idDemand'],
+                "anneeExperience" => $res['anneeExperience'],
+                "descriSitMatrimoniale" => $res['descriSitMatrimoniale'],
+                "descriSexe" => $res['descriSexe'],
+                "nation" => $res['nation']
+
+            );
+            array_push($array,$ar);
+        }
+        return $array;
     }
 
     public function deleteById($idDemand){

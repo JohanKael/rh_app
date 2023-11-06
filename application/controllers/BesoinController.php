@@ -16,7 +16,7 @@ class BesoinController extends CI_Controller {
         );
         $Tablee = "services";
         $this->crudModel->insert_data($dataService, $Tablee);
-        $idService =  $this->crudModel->get_idService($dataService, $Tablee);
+        $idService =  $this->crudModel->get_idService($dataService);
 
         $data = array(
             'idService' => $idService,
@@ -30,7 +30,7 @@ class BesoinController extends CI_Controller {
             // Call the model to insert the data
             $Table = 'besoin'; // Table name is 'besoin'
             $this->crudModel->insert_data($data, $Table);
-
+            redirect('index.php/recruit');
     }
 
 }

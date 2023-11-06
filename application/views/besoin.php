@@ -16,7 +16,7 @@
 									<input type="number" class="form-control" placeholder="Heure voulu" aria-describedby="basic-addon1" name="heureVoulu" id="">
 								</div>
 								<div class="form-group">
-									<label for="horaire">Employer demander :</label>
+									<label for="horaire">Employé actif actuel :</label>
 									<input type="number" class="form-control" placeholder="Hommejour" aria-describedby="basic-addon1" name="HommeJour" id="">
 								</div>
 							</div>
