@@ -4,7 +4,7 @@
     class InputCV extends CI_Controller {
         public function __construct(){
             parent::__construct();
-            $this->load->model('client/inputCV_model');
+            $this->load->model('admin/crudModel');
         }
 
         public function index() {
@@ -18,6 +18,12 @@
         }
 
         public function traitInsertionCV() {
+            $dataCV = array(
+                'nom_service' => $this->input->post('nom_service'),
+                'heureVoulu' => $this->input->post('heureVoulu'),
+                'Hommejour' => $this->input->post('Hommejour')
+            );
+    
             $nom = $this->input->post('nom');
             $prenom = $this->input->post('prenom');
             $birthday = $this->input->post('date_de_naissance');
