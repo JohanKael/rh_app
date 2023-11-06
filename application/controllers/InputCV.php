@@ -11,7 +11,7 @@
             $this->load->view('header');
 
             $data=array();
-            $data['states'] = $this->inputCV_model->getState();
+            $data['states'] = $this->crudModel->getState();
             $this->load->view('Client/inputCV', $data);
 
             $this->load->view('footer');

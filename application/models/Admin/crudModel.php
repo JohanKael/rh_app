@@ -47,6 +47,16 @@ class crudModel extends CI_Model {
     }
 }
 
+//** ------------------------------------------------------------------------------------------------- */
+/** Debut partie Client */
+
+public function getState() {
+    $query = $this->db->get('sitMatrimoniale');
+    return $query->result();
+}
+
+//** ------------------------------------------------------------------------------------------------- */
+/** Fin partie Client */
 
 }
 
