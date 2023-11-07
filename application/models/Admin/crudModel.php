@@ -52,7 +52,15 @@ class crudModel extends CI_Model {
 
 public function getState() {
     $query = $this->db->get('sitMatrimoniale');
-    return $query->result();
+    $array = array();
+    foreach($query->result_array() as $res){
+        $ar = array(
+            'idSitMatrimoniale' => $res['idSitMatrimoniale'],
+            'descriSitMatrimoniale' => $res['descriSitMatrimoniale']
+        );
+        array_push($array,$ar);
+    }
+    return $array;
 }
 
 public function getId_Element($idAttribut,$table){
@@ -74,8 +82,15 @@ public function get_etat($choice){
     $this->db->from('sitMatrimoniale');
     $this->db->where('descriSitMatrimoniale', $choice);
     $query = $this->db->get();
-    return $query->row();
-}
+    $array = array();
+    foreach($query->result_array() as $res){
+        $ar = array(
+            "idSitMatrimoniale" => $res['idSitMatrimoniale']
+        );
+        array_push($array,$ar);
+    }
+    return $array;
+} 
 
 //** ------------------------------------------------------------------------------------------------- */
 /** Fin partie Client */
