@@ -11,7 +11,7 @@
 <body>
 
     <div class="col-md-3 navig">
-        <a href="<?php echo site_url() ?>index.php/recruit">
+        <a href="<?php echo site_url() ?>index.php/ClientMain">
             <h1 style="font-size: 60px;">RH APP</h1>
         </a>
         <br>
@@ -23,7 +23,6 @@
 
     <div class="col-md-9 contenu">
     
-
 
 
 

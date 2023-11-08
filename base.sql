@@ -51,6 +51,16 @@ alter table besoin add foreign key(idSitMatrimoniale) references sitMatrimoniale
 alter table besoin add foreign key(idSexe) references sexe(idSexe);
 alter table besoin add foreign key(idNationalite) references nationalite(idNationalite);
 
+-- -----------------------------------------------------------------
+-- -----------------------------------------------------------------
+-- DEBUT partie client --
+CREATE TABLE contact(
+    idContact int PRIMARY KEY AUTO_INCREMENT,
+    telephone INT,
+    email VARCHAR(150)
+);
+--  select * from contact
+--  drop table contact
 
 INSERT INTO sexe (descriSexe) VALUES ('Homme'), ('Femme');
 
@@ -84,3 +94,47 @@ create table questRep(
     checkRep tinyint
 );
 alter table questRep add foreign key(idQuestion) references question(idQuestion);
+CREATE Table experience(
+    idExperience int PRIMARY KEY AUTO_INCREMENT,
+    annee int
+);
+--  select * from experience
+--  drop table experience
+
+CREATE TABLE identite(
+    idIdentite int PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(100),
+    prenom VARCHAR(100),
+    date_naissance DATE,
+    adresse VARCHAR(30)
+);
+--  select * from identite
+--  drop table identite
+
+CREATE Table cv(
+    idCV int PRIMARY KEY auto_increment,
+    idContact int,
+    idExperience int,
+    idSitMatrimoniale int,
+    idIdentite int
+);
+--  select * from cv
+--  drop table cv
+
+alter table cv add foreign key(idContact) references contact(idContact);
+alter table cv add foreign key(idExperience) references experience(idExperience);
+alter table cv add foreign key(idSitMatrimoniale) references sitMatrimoniale(idSitMatrimoniale);
+alter table cv add foreign key(idIdentite) references identite(idIdentite);
+
+-- DEBUT data test --
+INSERT INTO sitMatrimoniale(descriSitMatrimoniale) VALUES
+    ('Marie'),
+    ('Divorce'),
+    ('Veuve'),
+    ('Celibataire');
+
+-- FIN data test --
+
+-- -----------------------------------------------------------------
+-- -----------------------------------------------------------------
+-- FIN partie client --
