@@ -90,18 +90,15 @@ public function get_id($table_name, $data,$NomID) {
 
 public function get_etat($choice){
     $this->db->select('idSitMatrimoniale');
-    $this->db->from('sitMatrimoniale');
     $this->db->where('descriSitMatrimoniale', $choice);
-    $query = $this->db->get();
-    $array = array();
-    foreach($query->result_array() as $res){
-        $ar = array(
-            "idSitMatrimoniale" => $res['idSitMatrimoniale']
-        );
-        array_push($array,$ar);
+    $query = $this->db->get('sitMatrimoniale');
+    $row = $query->row();
+    if ($row) {
+        return $row->idSitMatrimoniale;
+    } else {
+        return null; // Ou toute autre indication que l'ID n'a pas été trouvé
     }
-    return $array;
-} 
+}
 
 //** ------------------------------------------------------------------------------------------------- */
 /** Fin partie Client */

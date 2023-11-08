@@ -18,7 +18,7 @@
         }
 
         public function traitInsertionCV() {
-            $this->load->view('header');
+            
 
             $tableIdentite = 'identite'; $tableContact = 'contact'; $tableExperience = 'experience'; $tableCV = 'cv';
             $dataIdentite = array(
@@ -42,19 +42,17 @@
             );
             $data3 = $this->crudModel->insert_data($dataExperience,$tableExperience);
             $_idExperience = 'idExperience';
-
+            echo $choix;
             // Situation patrimoniale
-            $choix = $this->input->post('etat');
             $ids = array(
-                'idContact' => $this->crudModel->getId_Element($_idContact, $tableContact),
-                'idExperience' => $this->crudModel->getId_Element($_idExperience, $tableExperience),
-                'idSitMatrimoniale' => $this->crudModel->get_etat($choix),
-                'idIdentite' => $this->crudModel->getId_Element($_idIdentite, $tableIdentite)
+                'idContact' => $this->crudModel->get_id($tableContact,$dataContact,$_idContact),
+                'idExperience' => $this->crudModel->get_id($tableExperience,$dataExperience ,$_idExperience),
+                'idSitMatrimoniale' => $this->input->post('etat'),
+                'idIdentite' => $this->crudModel->get_id($tableIdentite ,$dataIdentite ,$_idIdentite)
             );
             $data4 = $this->crudModel->insert_data($ids,$tableCV);
+            redirect('index.php/InputCV');
 
-            $this->load->view('client/inputCV');
-            $this->load->view('footer');
         }
         
     }
